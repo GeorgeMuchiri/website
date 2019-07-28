@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset=utf-8 /> <meta name=viewport content="width=device-width,initial-scale=1"/> <title>Pillars Of Wisdom</title>
+    <link rel="stylesheet" href="{% static 'sermons/main.css' %}">
+    <link rel="stylesheet" href="{% static 'sermons/css/main.abe036c864a2f1cf928a.css' %}"
+    <title></title>
+  </head>
+  <!--Navbar-->
+    <nav class="navbar navbar-expand-lg ">
+      <div class="container" id="navText">
+        <!-- Navbar brand -->
+        <p
+          id="icon"
+          style="text-shadow: rgb(176, 179, 178) 0px 0px 0px, rgb(181, 184, 183) 1px 1px 0px, rgb(186, 189, 188) 2px 2px 0px, rgb(192, 194, 193) 3px 3px 0px, rgb(197, 199, 198) 4px 4px 0px, rgb(202, 204, 203) 5px 5px 0px, rgb(207, 209, 208) 6px 6px 0px, rgb(212, 214, 213) 7px 7px 0px, rgb(217, 219, 218) 8px 8px 0px, rgb(222, 224, 224) 9px 9px 0px, rgb(227, 230, 229) 10px 10px 0px, rgb(232, 235, 234) 11px 11px 0px, rgb(237, 240, 239) 12px 12px 0px, rgb(242, 245, 244) 13px 13px 0px, rgb(247, 250, 249) 14px 14px 0px; font-size: 24px; color: rgb(2, 3, 3); height: 46px; width: 46px; line-height: 46px; border-radius: 17%; text-align: center; background-color: rgb(252, 255, 254);"
+        >
+          PW
+        </p>
+        <a class="navbar-brand font-weight-bolder black-text" href="{% url 'home-page'%}">
+          Pillars Of Wisdom
+        </a>
+
+        <!-- Collapse button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#basicExampleNav"
+          aria-controls="basicExampleNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="dark-black-text"><i class="fas fa-bars fa-1x"></i></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+          <!-- Links -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'home-page'%}">
+                  <!--<i class="fas fa-phone mx-1"></i> -->
+                  Home</a>
+              </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'about'%}">
+                <i class="far fa-question-circle mx-1"></i>
+                About
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'sermons'%}">
+                <i class="fas fa-scroll mx-1"></i>
+                Sermons</a>
+            </li>
+          <!--  <li class="nav-item">
+              <a class="nav-link" href="/archives.html">
+                <i class="far fa-file-archive mx-1"></i>
+                Archive</a>
+            </li> -->
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'contact'%}">
+                <i class="fas fa-phone mx-1"></i>
+                Contact Us</a>
+            </li>
+        <!--    <li class="nav-item">
+              <a class="nav-link" href="/signin.html"><i class="fas fa-user-alt mx-1"></i> Sign In </a>
+            </li> -->
+          </ul>
+          <!-- Links -->
+        </div>
+        <!-- Collapsible content -->
+      </div>
+    </nav>
+    <!--/.Navbar-->
+
+  <body>
+    {% block content %}
+    {% endblock %}
+  </body>
+  <script type="text/javascript" src="{% static 'sermons/js/bundle.js' %}">
+  </script>
+  <script type="text/javascript" src="{% static 'sermons/js/1.bundle.js' %}">
+  </script>
+
+
+  <!-- Email Subscription -->
+  <div class="page-footer font-small grey darken-4 pt-4">
+    <!-- Email Subscription Elements -->
+    <div class="container">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class=" col-md-6 mb-2 white-text">
+          <!-- Form -->
+          <p>Get our latest posts by subscribing to our mailing list.</p>
+          <!-- Form -->
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+     <div class=" col-md-6 mb-4">
+          <form class="input-group">
+            <input type="text" class="form-control form-control-sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2" />
+            <div class="input-group-append">
+              <button class="btn btn-sm btn-outline-white my-0" type="button">Subscribe</button>
+            </div>
+          </form>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+  </div>
+    <!-- Email Subscription Elements -->
+ </div>
+  <!-- Email Subscription -->
+  <!--Footer-->
+  <div>
+    <!-- Footer -->
+    <footer class="page-footer font-small black pt-4">
+      <div class="container">
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+          <!-- Grid row -->
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-4 mt-md-0 mt-3">
+              <!-- Content -->
+              <h5 class="font-weight-bold text-uppercase mb-4">Pillars Of Wisdom</h5>
+              <p>
+                Here you can use rows and columns here to organize your footer content. Here you can use rows and columns here to organize your footer content. Here you can use
+                rows and columns here to organize your footer content.
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <hr class="clearfix w-100 d-md-none pb-3" />
+
+            <!-- Grid column -->
+            <div class="col-md-5 mt-md-0 mt-3">
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mb-4">Categories</h5>
+
+              <p>
+                <a class="light-blue-text" href="/wisdom">Pillars Of Wisdom</a>
+              </p>
+              <p>
+                <a class="light-blue-text" href="/marriage">Pillars of Marriage</a>
+              </p>
+              <p>
+                <a class="light-blue-text" href="/foundations">Pillars Foundation Classes</a>
+              </p>
+              <p>
+                <a class="light-blue-text" href="/dreams">Dreams</a>
+              </p>
+            </div>
+            <!-- Grid column -->
+
+            <!-- Grid column -->
+            <div class="col-md-3 mt-md-0 mt-3">
+              <!-- Links -->
+              <h5 class="font-weight-bold text-uppercase mb-4">Contact Us:</h5>
+
+              <p><i class="fas fa-home mr-3"></i> Nairobi, 10012, KE</p>
+              <p><i class="fas fa-envelope mr-3"></i> info@pillars.org</p>
+              <p><i class="fas fa-phone mr-3"></i> + 254 720 567 788</p>
+              <p><i class="fas fa-print mr-3"></i> + 254 234 567 819</p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+        <!-- Footer Links -->
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-1 grey darken-4">
+        © 2019 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/"> PillarsOfWisdom.Org</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+  </div>
+  <!--/.Footer-->
+</html>
