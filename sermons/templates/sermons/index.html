@@ -154,17 +154,19 @@
                <div class="col-12  pl-0 ">
                  <h5 class="font-weight-bold mb-0">Pillars of Wisdom</h5>
                  <a href="#!" class="blue-text font-weight-normal  font-italic"
-                   >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit</a
+                   >{% for teach in wisdom %}
+                        {{ teach.title }}
+                   </a
                  >
                  <p class="mb-1">
-                   <a class="black-text" href="#"><i class="fas fa-play mx-2"></i>Play Audio</a>
-                   <a class="black-text" href="#"><i class="fas fa-file-download mx-2"></i>Download</a>
+                   <a class="black-text" href="{{ teach.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
+                   <a class="black-text" href="{{ teach.notes.url }}"><i class="fas fa-file-download mx-2"></i>Download Notes</a>
                  </p>
-                 <h6 class="dark-grey-text">19/08/2018<span class="font-small blue-text"> By Teacher Sammy</span></h6>
+                 <h6 class="dark-grey-text">{{ teach.date_created }}<span class="font-small blue-text">By {{ teach.teacher }}</span></h6>
                </div>
              </div>
            </div>
-           <!-- Grid column -->
+           <!-- Grid column -->{% endfor %}
          </div>
          <!-- Grid row -->
        </div>
@@ -195,16 +197,16 @@
                <div class="col-12  pl-0 ">
                  <h5 class="font-weight-bold mb-0">Pillars of Marriage</h5>
                  <a href="#!" class="blue-text font-weight-normal font-italic"
-                   >{% for teach in teacher %}
+                   >{% for teaching in marriage %}
 
-                      {{ teach.title }}
+                      {{ teaching.title }}
                  </a>
                  <p class="mb-1">
-                <a class="black-text" href="{{ teach.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
+                <a class="black-text" href="{{ teaching.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
 
-                   <a class="black-text" href="{{ teach.notes.url }}"><i class="fas fa-file-download mx-2"></i>Notes</a>
+                   <a class="black-text" href="{{ teaching.notes.url }}"><i class="fas fa-file-download mx-2"></i>Download Notes</a>
                  </p>
-                 <h6 class="dark-grey-text">{{ teach.date_created }}<span class="font-small light-blue-text"> By {{ teach.teacher }}</span></h6>
+                 <h6 class="dark-grey-text">{{ teaching.date_created }}<span class="font-small light-blue-text"> By {{ teaching.teacher }}</span></h6>
                  {% endfor %}
                </div>
              </div>
@@ -240,17 +242,19 @@
                <div class="col-12  pl-0 ">
                  <h5 class="font-weight-bold mb-0">Foundations Class</h5>
                  <a href="#!" class="blue-text font-weight-normal font-italic"
-                   >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit</a
+                   > {% for found in foundation %}
+                        {{ found.title }}
+                   </a
                  >
                  <p class="mb-1">
-                   <a class="black-text" href="#"><i class="fas fa-play mx-2"></i>Play Audio</a>
-                   <a class="black-text" href="#"><i class="fas fa-file-download mx-2"></i>Download</a>
+                   <a class="black-text" href="{{ found.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
+                   <a class="black-text" href="{{ found.notes.url }}"><i class="fas fa-file-download mx-2"></i>Download Notes</a>
                  </p>
-                 <h6 class="dark-grey-text">19/08/2018<span class="font-small light-blue-text"> By Teacher Sammy</span></h6>
+                 <h6 class="dark-grey-text">{{ found.date_created }}<span class="font-small light-blue-text"> By {{ found.teacher }}</span></h6>
                </div>
              </div>
            </div>
-           <!-- Grid column -->
+           <!-- Grid column --> {% endfor %}
          </div>
          <!-- Grid row -->
        </div>

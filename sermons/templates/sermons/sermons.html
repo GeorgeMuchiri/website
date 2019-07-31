@@ -1,11 +1,26 @@
 {% extends 'sermons/base.html'%}
 
 {% block content %}
-  {% for post in posts %}
 
+<div class="col-md-9">
+  <!-- Excerpt -->
+  <div class="d-flex justify-content-between">
+    <div class="col-12  pl-0 ">
+      <h5 class="font-weight-bold mb-0">Pillars of Marriage</h5>
+      {% for teaching in marriage %}
+      <a href="#!" class="blue-text font-weight-normal font-italic">
 
+           {{ teaching.title }}
+      </a>
+      <p class="mb-1">
+     <a class="black-text" href="{{ teaching.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
 
-{{ post }}
-
-  {% endfor %}
+        <a class="black-text" href="{{ teaching.notes.url }}"><i class="fas fa-file-download mx-2"></i>Download Notes</a>
+      </p>
+      <h6 class="dark-grey-text">{{ teaching.date_created }}<span class="font-small light-blue-text"> By {{ teaching.teacher }}</span></h6>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- Grid column -->
 {% endblock content %}
