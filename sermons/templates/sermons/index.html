@@ -129,7 +129,7 @@
    <div class="row wow fadeIn">
      <!--Left Grid column-->
      <div class="col-lg-8 col-md-12 ">
-       <h3 class="h3 mb-5"><u>Latest Posts</u></h3>
+       <a href="{% url 'category' %}"><h3 class="h3 mb-5"><u>Latest Posts</u></h3></a>
 
        <!-- Small news -->
        <div class="single-news mb-1">
@@ -153,13 +153,21 @@
              <div class="d-flex justify-content-between">
                <div class="col-12  pl-0 ">
               <a href="{% url 'wisdom'%}">   <h5 class="font-weight-bold mb-0">Pillars of Wisdom</h5> </a>
-                 <a href="#!" class="blue-text font-weight-normal  font-italic"
-                   >{% for teach in wisdom %}
+                 <a href="#!" class="blue-text font-weight-normal  font-italic">
+                   {% for teach in wisdom %}
                         {{ teach.title }}
                    </a>
                  <p class="mb-1">
+                   {%if teach.audi == None %}
+                   <a class="black-text" href="#!"><i class="fas fa-play mx-2"></i>No Audio</a>
+                   {% else %}
                    <a class="black-text" href="{{ teach.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
+                   {% endif %}
+                   {% if teach.notes == None %}
+                   <a class="black-text" href="#!"><i class="fas fa-file-download mx-2"></i>Notes Unavailable </a>
+                   {% else %}
                    <a class="black-text" href="{{ teach.notes.url }}"><i class="fas fa-file-download mx-2"></i>Download Notes</a>
+                   {% endif %}
                  </p>
                  <h6 class="dark-grey-text">{{ teach.date_created }}<span class="font-small blue-text">By {{ teach.teacher }}</span></h6>
                </div>
@@ -195,15 +203,22 @@
              <div class="d-flex justify-content-between">
                <div class="col-12  pl-0 ">
                  <a href="{% url 'marriage' %}"> <h5 class="font-weight-bold mb-0">Pillars of Marriage</h5> </a>
-                 <a href="#!" class="blue-text font-weight-normal font-italic"
-                   >{% for teaching in marriage %}
+                 <a href="#!" class="blue-text font-weight-normal font-italic">
+                   {% for teaching in marriage %}
 
                       {{ teaching.title }}
                  </a>
                  <p class="mb-1">
-                <a class="black-text" href="{{ teaching.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
-
+                   {% if teaching.audi == None %}
+                   <a class="black-text" href="#!"><i class="fas fa-play mx-2"></i>No Audio</a>
+                   {% else %}
+                   <a class="black-text" href="{{ teaching.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
+                   {% endif %}
+                   {% if teaching.notes == None %}
+                   <a class="black-text" href="#!"><i class="fas fa-file-download mx-2"></i>Notes Unavailable</a>
+                   {% else %}
                    <a class="black-text" href="{{ teaching.notes.url }}"><i class="fas fa-file-download mx-2"></i>Download Notes</a>
+                   {% endif %}
                  </p>
                  <h6 class="dark-grey-text">{{ teaching.date_created }}<span class="font-small light-blue-text"> By {{ teaching.teacher }}</span></h6>
                  {% endfor %}
@@ -239,15 +254,24 @@
              <!-- Excerpt -->
              <div class="d-flex justify-content-between">
                <div class="col-12  pl-0 ">
-                 <a href="{% url 'foundation' %}"><h5 class="font-weight-bold mb-0">Foundations Class</h5></a
+                 <a href="{% url 'foundation' %}"><h5 class="font-weight-bold mb-0">Foundations Class</h5></a>
                  <a href="#!" class="blue-text font-weight-normal font-italic"
                    > {% for found in foundation %}
+
                         {{ found.title }}
-                   </a
-                 >
+                   </a>
+
                  <p class="mb-1">
+                   {% if found.audi == None %}
+                   <a class="black-text" href="#!"><i class="fas fa-play mx-2"></i>No Audio</a>
+                   {% else%}
                    <a class="black-text" href="{{ found.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
+                   {% endif %}
+                   {% if found.notes == None %}
+                   <a class="black-text" href="#!"><i class="fas fa-file-download mx-2"></i>Notes Unavailable</a>
+                   {% else %}
                    <a class="black-text" href="{{ found.notes.url }}"><i class="fas fa-file-download mx-2"></i>Download Notes</a>
+                   {% endif %}
                  </p>
                  <h6 class="dark-grey-text">{{ found.date_created }}<span class="font-small light-blue-text"> By {{ found.teacher }}</span></h6>
                </div>

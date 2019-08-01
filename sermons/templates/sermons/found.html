@@ -12,9 +12,16 @@
            {{ teaching.title }}
       </a>
       <p class="mb-1">
-     <a class="black-text" href="{{ teaching.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
-
+        {% if teaching.audi %}
+        <a class="black-text" href="{{ teaching.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
+        {% else %}
+        <a class="black-text" href="#!"><i class="fas fa-play mx-2"></i>No Audio</a>
+        {% endif %}
+        {% if teaching.notes %}
         <a class="black-text" href="{{ teaching.notes.url }}"><i class="fas fa-file-download mx-2"></i>Download Notes</a>
+        {% else %}
+        <a class="black-text" href="#!"><i class="fas fa-file-download mx-2"></i>Notes Unavailable</a>
+        {% endif %}
       </p>
       <h6 class="dark-grey-text">{{ teaching.date_created }}<span class="font-small light-blue-text"> By {{ teaching.teacher }}</span></h6>
       {% endfor %}
