@@ -25,7 +25,7 @@ SECRET_KEY = 't_ql9%lb9lj09b6m86i%g7+izqh$9us#0g)t$qcc_^gxj0#t)v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['pillars.co.ke',]
 
 
 # Application definition
