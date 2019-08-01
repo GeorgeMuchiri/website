@@ -152,12 +152,11 @@
              <!-- Excerpt -->
              <div class="d-flex justify-content-between">
                <div class="col-12  pl-0 ">
-                 <h5 class="font-weight-bold mb-0">Pillars of Wisdom</h5>
+              <a href="{% url 'wisdom'%}">   <h5 class="font-weight-bold mb-0">Pillars of Wisdom</h5> </a>
                  <a href="#!" class="blue-text font-weight-normal  font-italic"
                    >{% for teach in wisdom %}
                         {{ teach.title }}
-                   </a
-                 >
+                   </a>
                  <p class="mb-1">
                    <a class="black-text" href="{{ teach.audi.url }}"><i class="fas fa-play mx-2"></i>Play Audio</a>
                    <a class="black-text" href="{{ teach.notes.url }}"><i class="fas fa-file-download mx-2"></i>Download Notes</a>
@@ -195,7 +194,7 @@
              <!-- Excerpt -->
              <div class="d-flex justify-content-between">
                <div class="col-12  pl-0 ">
-                 <h5 class="font-weight-bold mb-0">Pillars of Marriage</h5>
+                 <a href="{% url 'marriage' %}"> <h5 class="font-weight-bold mb-0">Pillars of Marriage</h5> </a>
                  <a href="#!" class="blue-text font-weight-normal font-italic"
                    >{% for teaching in marriage %}
 
@@ -240,7 +239,7 @@
              <!-- Excerpt -->
              <div class="d-flex justify-content-between">
                <div class="col-12  pl-0 ">
-                 <h5 class="font-weight-bold mb-0">Foundations Class</h5>
+                 <a href="{% url 'foundation' %}"><h5 class="font-weight-bold mb-0">Foundations Class</h5></a
                  <a href="#!" class="blue-text font-weight-normal font-italic"
                    > {% for found in foundation %}
                         {{ found.title }}

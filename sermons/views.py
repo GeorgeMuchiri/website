@@ -12,6 +12,7 @@ def index(request):
     'marriage': marriage,
     'foundation': foundation,
     'wisdom': wisdom,
+
      }
 
     return render(request, 'sermons/index.html', context)
@@ -25,12 +26,43 @@ def sermons(request):
     marriage = Sermon.objects.filter(category__name="Pillars of Marriage").order_by("-date_created")
     foundation = Sermon.objects.filter(category__name="Foundation Class").order_by("-date_created")
     wisdom = Sermon.objects.filter(category__name="Pillars of Wisdom").order_by("-date_created")
+    serms = Sermon.objects.all()
     context  = {
     'marriage': marriage,
     'foundation': foundation,
     'wisdom': wisdom,
+    'serms': serms
      }
     return render(request, 'sermons/sermons.html', context)
 
 def contact(request):
     return render(request, 'sermons/contact.html')
+
+
+def categories(request):
+    cat = Category.objects.all()
+    context = {
+    'cat': cat
+    }
+    return render(request, 'sermons/category.html', context)
+
+def foundation(request):
+    foundation = Sermon.objects.filter(category__name="Foundation Class").order_by("-date_created")
+    context = {
+    'foundation': foundation
+    }
+    return render(request, 'sermons/found.html', context)
+
+def marriage(request):
+    marriage = Sermon.objects.filter(category__name="Pillars of Marriage").order_by("-date_created")
+    context = {
+    'marriage': marriage
+    }
+    return render(request, 'sermons/marriage.html', context)
+
+def wisdom(request):
+    wisdom = Sermon.objects.filter(category__name="Pillars of Wisdom").order_by("-date_created")
+    context = {
+    'wisdom': wisdom
+    }
+    return render(request, 'sermons/wisdom.html', context)

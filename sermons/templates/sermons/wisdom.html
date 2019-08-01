@@ -1,13 +1,11 @@
-{% extends 'sermons/base.html'%}
-
+{% extends 'sermons/base.html' %}
 {% block content %}
-
 <div class="col-md-9">
   <!-- Excerpt -->
   <div class="d-flex justify-content-between">
     <div class="col-12  pl-0 ">
-      <h5 class="font-weight-bold mb-0">All Sermons</h5>
-      {% for teaching in serms %}
+      <h5 class="font-weight-bold mb-0">Pillars of Wisdom</h5>
+      {% for teaching in wisdom %}
       <a href="#!" class="blue-text font-weight-normal font-italic">
 
            {{ teaching.title }}
@@ -22,5 +20,5 @@
     </div>
   </div>
 </div>
-<!-- Grid column -->
+
 {% endblock content %}

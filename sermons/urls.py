@@ -6,4 +6,8 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('sermons/', views.sermons, name='sermons'),
     path('contact/', views.contact, name='contact'),
+    path('category/', views.categories, name='category'),
+    path('marriage/', views.marriage, name='marriage'),
+    path('wisdom/', views.wisdom, name='wisdom'),
+    path('foundation/', views.foundation, name='foundation'),
 ]
