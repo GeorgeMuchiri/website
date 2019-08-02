@@ -2,11 +2,33 @@
 
 {% block content %}
 
+<!-- Grid row -->
+<div class="container">
+<div class="row">
+  <div class="col-12">
+    <nav aria-label="breadcrumb ">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a class="black-text" href="/index.html">Home</a></li>
+        <li class="breadcrumb-item active">sermons</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+<!-- Blog Template -->
+<section class="mt-1">
+  <div class="row">
+    <!--Left Column-->
+    <div class="col-md-8 col-12 ">
+      <h3 class="h3 mb-3">All Sermons</h3>
+      <!-- Small news -->
+      <div class="single-news mb-1">
+        <!-- Grid row -->
+        <div class="row">
+
+
 <div class="col-md-9">
   <!-- Excerpt -->
-  <div class="d-flex justify-content-between">
-    <div class="col-12  pl-0 ">
-      <h5 class="font-weight-bold mb-0">All Sermons</h5>
+
       {% for teaching in serms %}
       <a href="#!" class="blue-text font-weight-normal font-italic">
 
@@ -29,5 +51,9 @@
     </div>
   </div>
 </div>
+</div>
+</div>
+</div>
+
 <!-- Grid column -->
 {% endblock content %}
