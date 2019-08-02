@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .forms import ContactForm, MessagesForm
 from sermons.models import Teacher, Sermon, Category
 
 
@@ -36,7 +36,20 @@ def sermons(request):
     return render(request, 'sermons/sermons.html', context)
 
 def contact(request):
-    return render(request, 'sermons/contact.html')
+    form = MessagesForm()
+    if request.method == 'POST':
+        form = MessagesForm(request.POST or None)
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        subject = request.POST.get("subject")
+        message = request.POST.get("message")
+        if form.is_valid():
+            form.save()
+            form = MessagesForm()
+    context = {
+    'form': form
+    }
+    return render(request, 'sermons/contact.html', context)
 
 
 def categories(request):

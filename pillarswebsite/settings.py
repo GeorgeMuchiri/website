@@ -25,7 +25,7 @@ SECRET_KEY = 't_ql9%lb9lj09b6m86i%g7+izqh$9us#0g)t$qcc_^gxj0#t)v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pillars.co.ke',]
+ALLOWED_HOSTS = ['localhost']
 
 
 # Application definition
@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'pillarswebsite.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pillars',
@@ -85,7 +85,14 @@ DATABASES = {
         'PORT': '',
     }
 }
+'''
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 

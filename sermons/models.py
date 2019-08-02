@@ -23,9 +23,21 @@ class Sermon(models.Model):
     recently_added = models.DateTimeField(auto_now_add=True)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    audi = models.FileField(upload_to='audio/', default=None, null= True, blank=True)
-    notes = models.FileField(upload_to='notes/', default=None, null=True, blank=True)
+    audi = models.FileField(default=None, null= True, blank=True)
+    notes = models.FileField(default=None, null=True, blank=True)
     #slug = models.SlugField(max_length=250, unique=True)
 
     def __str__(self):
         return self.title
+
+class Messages(models.Model):
+    name = models.CharField(max_length=255, blank=True)
+    email = models.EmailField(blank=True)
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+
+    class Meta:
+        verbose_name_plural = 'Messages'
+
+    def __str__(self):
+        return self.name
