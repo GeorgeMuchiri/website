@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 't_ql9%lb9lj09b6m86i%g7+izqh$9us#0g)t$qcc_^gxj0#t)v'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['www.pillars.co.ke', '165.22.218.2', 'pillars.co.ke',]
 
 
 # Application definition

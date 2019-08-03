@@ -41,3 +41,15 @@ class Messages(models.Model):
 
     def __str__(self):
         return self.name
+
+class Announcements(models.Model):
+    title = models.CharField(max_length=255)
+    body = models.TextField()
+    by_who = models.ForeignKey(Teacher, on_delete=models.CASCADE)
+    date_posted = models.DateField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = 'Announcements'
+
+    def __str__(self):
+        return self.title

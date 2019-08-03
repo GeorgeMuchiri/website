@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from .forms import ContactForm, MessagesForm
-from sermons.models import Teacher, Sermon, Category
+from .forms import MessagesForm
+from sermons.models import Teacher, Sermon, Category, Announcements
 
 
 def index(request):
@@ -22,15 +22,10 @@ def about(request):
     return render(request, 'sermons/about.html')
 
 def sermons(request):
-
-    marriage = Sermon.objects.filter(category__name="Pillars of Marriage").order_by("-date_created")
-    foundation = Sermon.objects.filter(category__name="Foundation Class").order_by("-date_created")
-    wisdom = Sermon.objects.filter(category__name="Pillars of Wisdom").order_by("-date_created")
+    announce = Announcements.objects.all().order_by("-date_posted")[:3]
     serms = Sermon.objects.all()
     context  = {
-    'marriage': marriage,
-    'foundation': foundation,
-    'wisdom': wisdom,
+    'announce': announce,
     'serms': serms
      }
     return render(request, 'sermons/sermons.html', context)
@@ -61,21 +56,27 @@ def categories(request):
 
 def foundation(request):
     foundation = Sermon.objects.filter(category__name="Foundation Class").order_by("-date_created")
+    announce = Announcements.objects.all().order_by("-date_posted")[:3]
     context = {
-    'foundation': foundation
+    'foundation': foundation,
+    'announce': announce
     }
     return render(request, 'sermons/found.html', context)
 
 def marriage(request):
     marriage = Sermon.objects.filter(category__name="Pillars of Marriage").order_by("-date_created")
+    announce = Announcements.objects.all().order_by("-date_posted")[:3]
     context = {
-    'marriage': marriage
+    'marriage': marriage,
+    'announce': announce
     }
     return render(request, 'sermons/marriage.html', context)
 
 def wisdom(request):
     wisdom = Sermon.objects.filter(category__name="Pillars of Wisdom").order_by("-date_created")
+    announce = Announcements.objects.all().order_by("-date_posted")[:3]
     context = {
-    'wisdom': wisdom
+    'wisdom': wisdom,
+    'announce': announce
     }
     return render(request, 'sermons/wisdom.html', context)
